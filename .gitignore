@@ -4,3 +4,6 @@ dist
 *.local
 .env
 .env.*
+
+# Configuración con datos reales (WhatsApp, RUC, email). Nunca se versiona.
+includes/config.local.php

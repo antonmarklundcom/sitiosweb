@@ -1,0 +1,67 @@
+DirectoryIndex index.php
+Options -Indexes
+
+# Errores ---------------------------------------------------------------------
+ErrorDocument 404 /404.php
+
+# Seguridad -------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Archivos ocultos y de configuración -----------------------------------------
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "^(config\.local\.php|.*\.md)$">
+    Require all denied
+</FilesMatch>
+
+# URLs ------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # HTTPS. Activar recién cuando el certificado esté emitido en Hostinger.
+    # RewriteCond %{HTTPS} !=on
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # Canonical sin www. Comentar este bloque si el dominio elegido lleva www.
+    # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+    # Sitemap generado por PHP
+    RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+    # /pagina.php  ->  /pagina/   (301, para no tener dos URLs por página)
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+    RewriteRule ^ /%1/ [R=301,L]
+
+    # /  ->  index.php lo resuelve DirectoryIndex.
+    # /pagina/  ->  pagina.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([^/]+)/?$ $1.php [L]
+</IfModule>
+
+# Caché de assets -------------------------------------------------------------
+# Los assets llevan ?v=<mtime> desde asset() en includes/config.php, así que se
+# pueden cachear largo sin quedar pegados en una versión vieja.
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresDefault "access plus 1 hour"
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/xml
+</IfModule>
