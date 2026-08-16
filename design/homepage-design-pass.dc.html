@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sitios web para negocios en Paraguay | sitiosweb.com.py</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: #14150F; }
+  body { margin: 0; background: #F7F5F2; color: #14150F; font-family: "Instrument Sans", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+  a { color: #14150F; text-decoration: none; }
+  a:hover { color: #4c5a1a; }
+  summary::-webkit-details-marker { display: none; }
+  details[open] > summary > span[data-toggle] { transform: rotate(45deg); }
+  summary { list-style: none; }
+  :focus-visible { outline: 3px solid #77951B; outline-offset: 4px; }
+  @keyframes cue { 0% { transform: scaleY(0); opacity: 0 } 35% { opacity: .9 } 70% { transform: scaleY(1); opacity: .9 } 100% { transform: scaleY(1); opacity: 0 } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important } }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="--acid:{{ accent }};container-type:inline-size;width:{{ frameWidth }};max-width:100%;margin:0 auto;background:#F7F5F2;position:relative">
+
+  <header ref="{{ headerRef }}" style="position:sticky;top:0;z-index:900;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:66px;padding:12px clamp(16px,3cqi,34px);color:#F7F5F2;border-bottom:1px solid transparent;transition:background .25s,border-color .25s,color .25s">
+    <a href="#inicio" aria-label="sitiosweb.com.py, inicio" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:inherit">sitiosweb.com.py</a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Navegación principal" style="display:flex;gap:clamp(14px,2.2cqi,32px);white-space:nowrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase">
+        <a href="#incluye" style="color:inherit;opacity:.72">Qué incluye</a>
+        <a href="#como" style="color:inherit;opacity:.72">Cómo funciona</a>
+        <a href="#precio" style="color:inherit;opacity:.72">Precio</a>
+        <a href="#preguntas" style="color:inherit;opacity:.72">Preguntas</a>
+      </nav>
+    </sc-if>
+    <div style="display:flex;align-items:center;gap:10px">
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-controls="mobile-menu" style="min-height:44px;padding:12px 14px;color:inherit;border:1px solid currentColor;border-radius:999px;background:transparent;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;opacity:.85">Menú</button>
+      </sc-if>
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+        <a href="#empezar" style="padding:13px 18px;border-radius:999px;background:var(--acid,#C8F04A);color:#14150F;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase">WhatsApp</a>
+      </sc-if>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav id="mobile-menu" aria-label="Navegación móvil" style="position:absolute;top:64px;right:clamp(12px,3cqi,28px);left:clamp(12px,3cqi,28px);display:grid;padding:8px;color:#14150F;border:1px solid rgba(20,21,15,.1);border-radius:18px;background:rgba(247,245,242,.98);box-shadow:0 20px 60px rgba(20,21,15,.18);backdrop-filter:blur(12px);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase">
+        <a href="#incluye" onClick="{{ closeMenu }}" style="padding:16px 14px;border-radius:12px">Qué incluye</a>
+        <a href="#como" onClick="{{ closeMenu }}" style="padding:16px 14px;border-radius:12px">Cómo funciona</a>
+        <a href="#precio" onClick="{{ closeMenu }}" style="padding:16px 14px;border-radius:12px">Precio</a>
+        <a href="#preguntas" onClick="{{ closeMenu }}" style="padding:16px 14px;border-radius:12px">Preguntas</a>
+        <a href="#empezar" onClick="{{ closeMenu }}" style="margin-top:4px;padding:16px 14px;border-radius:12px;background:var(--acid,#C8F04A);text-align:center">Empezar por WhatsApp</a>
+      </nav>
+    </sc-if>
+  </header>
+
+  <main id="contenido">
+
+    <section id="inicio" style="position:relative;z-index:1;display:grid;grid-template-rows:auto minmax(0,1fr);min-height:100svh;margin-top:-66px;padding:clamp(88px,11svh,124px) clamp(16px,3cqi,34px) 0;overflow:hidden;isolation:isolate;background:#0E1723">
+      <div ref="{{ heroBgRef }}" aria-hidden="true" style="position:absolute;inset:0;z-index:-3;background-color:#0E1723;background-image:url('assets/img/hero-paraguay-positive-v3.webp');background-size:cover;background-position:50% 50%"></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;z-index:-2;background:radial-gradient(120% 80% at 50% 34%, rgba(6,10,16,.10) 0%, rgba(6,10,16,.42) 48%, rgba(6,10,16,.78) 100%)"></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg, rgba(6,10,16,.62) 0%, rgba(6,10,16,.18) 26%, rgba(6,10,16,.22) 54%, rgba(6,10,16,.72) 88%, #0E1723 100%)"></div>
+
+      <div style="position:relative;z-index:5;display:grid;justify-items:center;width:min(100%,940px);margin:0 auto;color:#F7F5F2;text-align:center">
+        <p style="display:flex;align-items:center;gap:10px;margin:0 0 clamp(14px,2.2svh,22px);color:rgba(247,245,242,.66);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:clamp(.58rem,1.5cqi,.68rem);font-weight:500;letter-spacing:.16em;text-transform:uppercase">
+          <span aria-hidden="true" style="display:inline-block;width:22px;height:1px;background:var(--acid,#C8F04A)"></span>Sitios web para negocios en Paraguay
+        </p>
+        <h1 style="margin:0;max-width:19ch;font-size:clamp(2.45rem,6.2cqi,5rem);font-weight:500;letter-spacing:-.055em;line-height:.9;text-wrap:balance">Tu negocio en Google <span style="display:block;color:rgba(247,245,242,.56)">y respondiendo en WhatsApp</span></h1>
+        <p style="max-width:34ch;margin:clamp(16px,2.6svh,26px) 0 0;color:rgba(247,245,242,.78);font-size:clamp(.98rem,1.6cqi,1.12rem);line-height:1.5;text-wrap:pretty">Sitio web, dominio y CRM. Desde Gs.&nbsp;89.000 al mes, facturado anualmente.</p>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:clamp(18px,3svh,30px)">
+          <a href="#ejemplos" style="display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:15px 22px;border:1px solid rgba(247,245,242,.34);border-radius:999px;background:rgba(247,245,242,.08);color:#F7F5F2;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;backdrop-filter:blur(8px)">Ver ejemplos</a>
+          <a href="#empezar" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:52px;padding:15px 16px 15px 24px;border-radius:999px;background:var(--acid,#C8F04A);color:#14150F;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;box-shadow:0 12px 32px rgba(6,10,16,.35)">Empezar <span aria-hidden="true" style="display:grid;place-items:center;width:30px;height:30px;margin:-4px 0;color:#F7F5F2;background:#14150F;border-radius:50%">↗</span></a>
+        </div>
+      </div>
+
+      <div id="ejemplos" ref="{{ carouselRef }}" tabindex="0" aria-roledescription="carrusel" aria-label="Ejemplos conceptuales de sitios web. Usá las flechas izquierda y derecha para navegar." style="position:relative;z-index:4;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:clamp(8px,1.4svh,16px);width:min(100%,1180px);margin:clamp(16px,3svh,44px) auto 0;padding-bottom:clamp(14px,2.6svh,26px);outline-offset:8px">
+        <p style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:0;color:rgba(247,245,242,.62);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:clamp(.52rem,1.3cqi,.62rem);letter-spacing:.14em;text-transform:uppercase">Ejemplos de dirección visual <span style="color:rgba(247,245,242,.36)">— conceptos, no trabajos de clientes</span></p>
+
+        <div ref="{{ stageRef }}" style="position:relative;min-height:190px;perspective:1600px;perspective-origin:50% 42%;transform-style:preserve-3d">
+          <sc-for list="{{ concepts }}" as="c" hint-placeholder-count="6">
+            <button type="button" data-card="true" onClick="{{ c.onSelect }}" aria-label="{{ c.aria }}" style="position:absolute;left:50%;bottom:0;display:block;padding:0;overflow:hidden;border:1px solid rgba(255,255,255,.42);border-radius:22px;background:#0E1723;box-shadow:0 26px 64px rgba(0,0,0,.42), inset 0 0 0 1px rgba(255,255,255,.08);cursor:pointer;backface-visibility:hidden;will-change:transform,opacity">
+              <span data-shot="true" aria-hidden="true" style="position:absolute;inset:0;background-image:url('assets/img/mobile-sites-spanish-sprite-v1.webp');background-repeat:no-repeat;background-size:600% auto;background-position:{{ c.x }} 0%;transition:background-position 6s cubic-bezier(.2,.62,.2,1)"></span>
+            </button>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+          <p aria-live="polite" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:0;color:#F7F5F2;min-height:24px">
+            <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,245,242,.5)">{{ activeTag }}</span>
+            <strong style="font-size:clamp(1rem,2.2cqi,1.2rem);font-weight:500;letter-spacing:-.03em">{{ activeName }}</strong>
+          </p>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div role="tablist" aria-label="Elegir ejemplo" style="display:flex;align-items:center;gap:6px;margin-right:4px">
+              <sc-for list="{{ concepts }}" as="c" hint-placeholder-count="6">
+                <button type="button" role="tab" aria-selected="{{ c.isActive }}" aria-label="{{ c.aria }}" onClick="{{ c.onSelect }}" style="width:26px;height:26px;padding:0;border:0;background:transparent;cursor:pointer;display:grid;place-items:center">
+                  <span aria-hidden="true" style="display:block;width:{{ c.dotW }};height:3px;border-radius:99px;background:{{ c.dotBg }};transition:width .3s,background .3s"></span>
+                </button>
+              </sc-for>
+            </div>
+            <button type="button" onClick="{{ prev }}" aria-label="Ejemplo anterior" style="min-width:44px;height:44px;color:rgba(247,245,242,.86);border:1px solid rgba(247,245,242,.26);border-radius:999px;background:rgba(14,23,35,.34);font-size:.85rem;cursor:pointer;backdrop-filter:blur(8px)">←</button>
+            <button type="button" onClick="{{ next }}" aria-label="Ejemplo siguiente" style="min-width:44px;height:44px;color:rgba(247,245,242,.86);border:1px solid rgba(247,245,242,.26);border-radius:999px;background:rgba(14,23,35,.34);font-size:.85rem;cursor:pointer;backdrop-filter:blur(8px)">→</button>
+            <button type="button" onClick="{{ togglePause }}" aria-pressed="{{ paused }}" aria-label="{{ pauseLabel }}" style="min-width:44px;height:44px;padding:0 12px;color:rgba(247,245,242,.86);border:1px solid rgba(247,245,242,.26);border-radius:999px;background:rgba(14,23,35,.34);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px)">{{ pauseText }}</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:clamp(76px,11cqi,148px) clamp(16px,3cqi,34px);background:#F7F5F2">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,6cqi,90px);align-items:start;width:min(100%,1120px);margin:0 auto">
+        <h2 data-reveal="true" style="margin:0;max-width:11ch;font-size:clamp(2.3rem,5.4cqi,4.6rem);font-weight:500;letter-spacing:-.055em;line-height:.9">Tu negocio existe. <span style="color:rgba(20,21,15,.42)">En Google, no.</span></h2>
+        <div style="display:grid;gap:0;padding-top:6px">
+          <p data-reveal="true" style="display:grid;grid-template-columns:34px 1fr;gap:14px;margin:0;padding:18px 0;border-top:1px solid rgba(20,21,15,.1);color:#14150F;font-size:clamp(1.05rem,1.9cqi,1.28rem);line-height:1.42;text-wrap:pretty"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.62rem;letter-spacing:.1em;color:rgba(20,21,15,.42);padding-top:.42em">01</span>Alguien busca desde el celular lo que vos vendés, ahora mismo.</p>
+          <p data-reveal="true" style="display:grid;grid-template-columns:34px 1fr;gap:14px;margin:0;padding:18px 0;border-top:1px solid rgba(20,21,15,.1);color:rgba(20,21,15,.62);font-size:clamp(1.05rem,1.9cqi,1.28rem);line-height:1.42;text-wrap:pretty"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.62rem;letter-spacing:.1em;color:rgba(20,21,15,.42);padding-top:.42em">02</span>Encuentra primero a un competidor que sí aparece.</p>
+          <p data-reveal="true" style="display:grid;grid-template-columns:34px 1fr;gap:14px;margin:0;padding:18px 0;border-top:1px solid rgba(20,21,15,.1);border-bottom:1px solid rgba(20,21,15,.1);color:rgba(20,21,15,.62);font-size:clamp(1.05rem,1.9cqi,1.28rem);line-height:1.42;text-wrap:pretty"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.62rem;letter-spacing:.1em;color:rgba(20,21,15,.42);padding-top:.42em">03</span>Le escribe por WhatsApp a él, no a vos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="incluye" style="padding:clamp(76px,11cqi,148px) clamp(16px,3cqi,34px);background:#EBE7DF">
+      <div style="width:min(100%,1120px);margin:0 auto">
+        <div data-reveal="true" style="margin-bottom:clamp(30px,5cqi,54px)">
+          <p style="margin:0 0 14px;color:rgba(20,21,15,.42);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase">El paquete esencial</p>
+          <h2 style="margin:0;font-size:clamp(2.3rem,5.4cqi,4.6rem);font-weight:500;letter-spacing:-.055em;line-height:.9">Qué incluye</h2>
+        </div>
+
+        <div data-reveal="true" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(10px,2cqi,40px);padding:clamp(24px,3cqi,34px) 0;border-top:1px solid rgba(20,21,15,.14)">
+          <div><p style="margin:0 0 12px;color:rgba(20,21,15,.42);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase">01 / Sitio</p><h3 style="margin:0;max-width:14ch;font-size:clamp(1.55rem,3cqi,2.35rem);font-weight:500;letter-spacing:-.045em;line-height:.98">Sitio web propio</h3></div>
+          <p style="max-width:46ch;margin:0;color:rgba(20,21,15,.62);font-size:clamp(1rem,1.5cqi,1.06rem);line-height:1.55;text-wrap:pretty">Una página hecha para tu negocio, no una plantilla genérica. Carga rápido en celulares de gama baja y se adapta a cualquier pantalla.</p>
+        </div>
+        <div data-reveal="true" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(10px,2cqi,40px);padding:clamp(24px,3cqi,34px) 0;border-top:1px solid rgba(20,21,15,.14)">
+          <div><p style="margin:0 0 12px;color:rgba(20,21,15,.42);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase">02 / Dominio</p><h3 style="margin:0;max-width:14ch;font-size:clamp(1.55rem,3cqi,2.35rem);font-weight:500;letter-spacing:-.045em;line-height:.98">Dominio .com.py</h3></div>
+          <p style="max-width:46ch;margin:0;color:rgba(20,21,15,.62);font-size:clamp(1rem,1.5cqi,1.06rem);line-height:1.55;text-wrap:pretty">Registramos y renovamos tu dominio. Queda a tu nombre. El hosting está incluido.</p>
+        </div>
+        <div data-reveal="true" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(10px,2cqi,40px);padding:clamp(24px,3cqi,34px) 0;border-top:1px solid rgba(20,21,15,.14)">
+          <div><p style="margin:0 0 12px;color:rgba(20,21,15,.42);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase">03 / WhatsApp</p><h3 style="margin:0;max-width:14ch;font-size:clamp(1.55rem,3cqi,2.35rem);font-weight:500;letter-spacing:-.045em;line-height:.98">Respuesta por WhatsApp</h3></div>
+          <p style="max-width:46ch;margin:0;color:rgba(20,21,15,.62);font-size:clamp(1rem,1.5cqi,1.06rem);line-height:1.55;text-wrap:pretty">Cada botón del sitio abre un chat con tu número y el mensaje ya escrito.</p>
+        </div>
+        <div data-reveal="true" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(10px,2cqi,40px);padding:clamp(24px,3cqi,34px) 0;border-top:1px solid rgba(20,21,15,.14);border-bottom:1px solid rgba(20,21,15,.14)">
+          <div><p style="margin:0 0 12px;color:rgba(20,21,15,.42);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase">04 / CRM</p><h3 style="margin:0;max-width:14ch;font-size:clamp(1.55rem,3cqi,2.35rem);font-weight:500;letter-spacing:-.045em;line-height:.98">VenderCRM incluido</h3></div>
+          <p style="max-width:46ch;margin:0;color:rgba(20,21,15,.62);font-size:clamp(1rem,1.5cqi,1.06rem);line-height:1.55;text-wrap:pretty">Los mensajes del sitio quedan ordenados en un solo lugar: quién escribió, qué pidió y en qué quedó la conversación.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="como" style="padding:clamp(76px,11cqi,148px) clamp(16px,3cqi,34px);background:#F7F5F2">
+      <div style="width:min(100%,1120px);margin:0 auto">
+        <div data-reveal="true" style="margin-bottom:clamp(34px,6cqi,62px)">
+          <p style="margin:0 0 14px;color:rgba(20,21,15,.42);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase">Del mensaje a la publicación</p>
+          <h2 style="margin:0;font-size:clamp(2.3rem,5.4cqi,4.6rem);font-weight:500;letter-spacing:-.055em;line-height:.9">Cómo funciona</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,4cqi,58px)">
+          <article data-reveal="true" style="padding-top:18px;border-top:1px solid rgba(20,21,15,.14)">
+            <span style="display:block;color:rgba(20,21,15,.3);font-size:clamp(2.8rem,5cqi,4.4rem);font-weight:500;letter-spacing:-.06em;line-height:1">01</span>
+            <h3 style="margin:22px 0 10px;font-size:clamp(1.25rem,2cqi,1.55rem);font-weight:500;letter-spacing:-.035em;line-height:1.08">Nos contás de tu negocio</h3>
+            <p style="max-width:34ch;margin:0;color:rgba(20,21,15,.62);line-height:1.55;text-wrap:pretty">Una conversación por WhatsApp: qué hacés, dónde estás y qué querés que la gente pida.</p>
+          </article>
+          <article data-reveal="true" style="padding-top:18px;border-top:1px solid rgba(20,21,15,.14)">
+            <span style="display:block;color:rgba(20,21,15,.3);font-size:clamp(2.8rem,5cqi,4.4rem);font-weight:500;letter-spacing:-.06em;line-height:1">02</span>
+            <h3 style="margin:22px 0 10px;font-size:clamp(1.25rem,2cqi,1.55rem);font-weight:500;letter-spacing:-.035em;line-height:1.08">Lo construimos</h3>
+            <p style="max-width:34ch;margin:0;color:rgba(20,21,15,.62);line-height:1.55;text-wrap:pretty">Escribimos el contenido, armamos el sitio, registramos el dominio y conectamos tu WhatsApp.</p>
+          </article>
+          <article data-reveal="true" style="padding-top:18px;border-top:1px solid rgba(20,21,15,.14)">
+            <span style="display:block;color:rgba(20,21,15,.3);font-size:clamp(2.8rem,5cqi,4.4rem);font-weight:500;letter-spacing:-.06em;line-height:1">03</span>
+            <h3 style="margin:22px 0 10px;font-size:clamp(1.25rem,2cqi,1.55rem);font-weight:500;letter-spacing:-.035em;line-height:1.08">Empezás a recibir mensajes</h3>
+            <p style="max-width:34ch;margin:0;color:rgba(20,21,15,.62);line-height:1.55;text-wrap:pretty">Publicamos y te entregamos el acceso.</p>
+            <small style="display:inline-block;margin-top:18px;padding:8px 12px;border:1px solid rgba(20,21,15,.14);border-radius:999px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,21,15,.62)">Referencia: 7 días hábiles</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="precio" style="padding:clamp(76px,11cqi,148px) clamp(16px,3cqi,34px);background:#EBE7DF;scroll-margin-top:70px">
+      <div data-reveal="true" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:clamp(28px,4cqi,64px);width:min(100%,1060px);margin:0 auto;padding:clamp(28px,4cqi,54px);border:1px solid rgba(20,21,15,.14);border-radius:26px;background:#F7F5F2">
+        <div>
+          <p style="margin:0;color:rgba(20,21,15,.42);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase">Precio</p>
+          <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin-top:16px">
+            <strong style="font-size:clamp(2.2rem,7.5cqi,5rem);font-weight:500;letter-spacing:-.065em;line-height:1;white-space:nowrap">Gs. 89.000</strong>
+            <span style="color:rgba(20,21,15,.62);font-size:1.05rem">/mes</span>
+          </div>
+          <p style="margin:16px 0 0;max-width:32ch;color:rgba(20,21,15,.62);line-height:1.55">Facturado anualmente — Gs. 1.068.000 por año.</p>
+          <a href="#empezar" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:56px;margin-top:28px;padding:16px 16px 16px 26px;border-radius:999px;background:var(--acid,#C8F04A);color:#14150F;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase">Empezar por WhatsApp <span aria-hidden="true" style="display:grid;place-items:center;width:30px;height:30px;margin:-4px 0;color:#F7F5F2;background:#14150F;border-radius:50%">↗</span></a>
+          <p style="max-width:38ch;margin:16px 0 0;color:rgba(20,21,15,.62);font-size:.92rem;line-height:1.5">Te responde una persona y te hace tres o cuatro preguntas sobre tu negocio.</p>
+        </div>
+        <ul style="display:grid;gap:0;margin:0;padding:0;list-style:none;align-content:start">
+          <li style="position:relative;padding:13px 0 13px 24px;border-bottom:1px solid rgba(20,21,15,.08);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase"><span aria-hidden="true" style="position:absolute;left:0;color:#77951B">↗</span>Sitio web hecho a medida</li>
+          <li style="position:relative;padding:13px 0 13px 24px;border-bottom:1px solid rgba(20,21,15,.08);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase"><span aria-hidden="true" style="position:absolute;left:0;color:#77951B">↗</span>Dominio .com.py a tu nombre</li>
+          <li style="position:relative;padding:13px 0 13px 24px;border-bottom:1px solid rgba(20,21,15,.08);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase"><span aria-hidden="true" style="position:absolute;left:0;color:#77951B">↗</span>Hosting y certificado SSL</li>
+          <li style="position:relative;padding:13px 0 13px 24px;border-bottom:1px solid rgba(20,21,15,.08);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase"><span aria-hidden="true" style="position:absolute;left:0;color:#77951B">↗</span>Botones de WhatsApp</li>
+          <li style="position:relative;padding:13px 0 13px 24px;border-bottom:1px solid rgba(20,21,15,.08);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase"><span aria-hidden="true" style="position:absolute;left:0;color:#77951B">↗</span>VenderCRM para tus conversaciones</li>
+          <li style="position:relative;padding:13px 0 13px 24px;border-bottom:1px solid rgba(20,21,15,.08);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase"><span aria-hidden="true" style="position:absolute;left:0;color:#77951B">↗</span>Ficha de Google Business configurada</li>
+          <li style="position:relative;padding:13px 0 13px 24px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase"><span aria-hidden="true" style="position:absolute;left:0;color:#77951B">↗</span>Cambios de contenido solicitados</li>
+          <li style="margin-top:18px;padding:0;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(20,21,15,.42);line-height:1.7">Precio y alcance a confirmar antes de publicar</li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="padding:clamp(76px,11cqi,148px) clamp(16px,3cqi,34px);background:#F7F5F2">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,7cqi,110px);width:min(100%,1120px);margin:0 auto">
+        <article data-reveal="true">
+          <p style="margin:0 0 16px;color:rgba(20,21,15,.42);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase">Esto es para vos</p>
+          <h2 style="margin:0;font-size:clamp(2rem,3.8cqi,3.4rem);font-weight:500;letter-spacing:-.05em;line-height:.94">Ideal si...</h2>
+          <ul style="display:grid;gap:0;margin:28px 0 0;padding:0;list-style:none">
+            <li style="padding:16px 0;border-top:1px solid rgba(20,21,15,.14);font-size:1.02rem;line-height:1.5;text-wrap:pretty">Tenés un comercio o servicio local y vendés por WhatsApp.</li>
+            <li style="padding:16px 0;border-top:1px solid rgba(20,21,15,.14);font-size:1.02rem;line-height:1.5;text-wrap:pretty">No tenés sitio, o el que tenés está desactualizado.</li>
+            <li style="padding:16px 0;border-top:1px solid rgba(20,21,15,.14);font-size:1.02rem;line-height:1.5;text-wrap:pretty">Querés aparecer cuando alguien busca tu rubro en tu ciudad.</li>
+            <li style="padding:16px 0;border-top:1px solid rgba(20,21,15,.14);border-bottom:1px solid rgba(20,21,15,.14);font-size:1.02rem;line-height:1.5;text-wrap:pretty">Preferís una cuota fija antes que un proyecto grande de una vez.</li>
+          </ul>
+        </article>
+        <article data-reveal="true" style="color:rgba(20,21,15,.5)">
+          <p style="margin:0 0 16px;color:rgba(20,21,15,.42);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase">Otro tipo de proyecto</p>
+          <h2 style="margin:0;font-size:clamp(2rem,3.8cqi,3.4rem);font-weight:500;letter-spacing:-.05em;line-height:.94">Todavía no, si...</h2>
+          <ul style="display:grid;gap:0;margin:28px 0 0;padding:0;list-style:none">
+            <li style="padding:16px 0;border-top:1px solid rgba(20,21,15,.1);font-size:1.02rem;line-height:1.5;text-wrap:pretty">Necesitás una tienda online con carrito y pagos.</li>
+            <li style="padding:16px 0;border-top:1px solid rgba(20,21,15,.1);font-size:1.02rem;line-height:1.5;text-wrap:pretty">Necesitás un sistema a medida o integrar tu facturación.</li>
+            <li style="padding:16px 0;border-top:1px solid rgba(20,21,15,.1);font-size:1.02rem;line-height:1.5;text-wrap:pretty">Necesitás el sitio en varios idiomas.</li>
+            <li style="padding:16px 0;border-top:1px solid rgba(20,21,15,.1);border-bottom:1px solid rgba(20,21,15,.1);font-size:1.02rem;line-height:1.5;text-wrap:pretty">Querés definir cada página fuera de la estructura acordada.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="preguntas" style="padding:clamp(76px,11cqi,148px) clamp(16px,3cqi,34px);background:#EBE7DF">
+      <div style="width:min(100%,820px);margin:0 auto">
+        <div data-reveal="true" style="margin-bottom:clamp(28px,4cqi,48px)">
+          <p style="margin:0 0 14px;color:rgba(20,21,15,.42);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase">Antes de empezar</p>
+          <h2 style="margin:0;font-size:clamp(2.3rem,5.4cqi,4.6rem);font-weight:500;letter-spacing:-.055em;line-height:.9">Preguntas</h2>
+        </div>
+        <details data-reveal="true" open="{{ startOpen }}" style="border-top:1px solid rgba(20,21,15,.14)">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px;padding:20px 0;cursor:pointer;font-size:clamp(1.05rem,1.9cqi,1.24rem);font-weight:500;letter-spacing:-.02em">¿El dominio es mío?<span aria-hidden="true" data-toggle="true" style="flex:none;color:rgba(20,21,15,.42);font-size:1.4em;line-height:1;transition:transform .2s">+</span></summary>
+          <p style="max-width:62ch;margin:-4px 0 24px;color:rgba(20,21,15,.62);line-height:1.6;text-wrap:pretty">Sí. Se registra a nombre de tu empresa o al tuyo. Si un día te vas, lo transferimos a donde nos digas sin costo.</p>
+        </details>
+        <details data-reveal="true" style="border-top:1px solid rgba(20,21,15,.14)">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px;padding:20px 0;cursor:pointer;font-size:clamp(1.05rem,1.9cqi,1.24rem);font-weight:500;letter-spacing:-.02em">¿Qué pasa si cancelo?<span aria-hidden="true" data-toggle="true" style="flex:none;color:rgba(20,21,15,.42);font-size:1.4em;line-height:1;transition:transform .2s">+</span></summary>
+          <p style="max-width:62ch;margin:-4px 0 24px;color:rgba(20,21,15,.62);line-height:1.6;text-wrap:pretty">El servicio sigue activo hasta terminar el año pagado. Después bajamos el sitio y te entregamos el dominio y los textos. No se devuelve la parte del año ya facturada.</p>
+        </details>
+        <details data-reveal="true" style="border-top:1px solid rgba(20,21,15,.14)">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px;padding:20px 0;cursor:pointer;font-size:clamp(1.05rem,1.9cqi,1.24rem);font-weight:500;letter-spacing:-.02em">¿Puedo cambiar el contenido después?<span aria-hidden="true" data-toggle="true" style="flex:none;color:rgba(20,21,15,.42);font-size:1.4em;line-height:1;transition:transform .2s">+</span></summary>
+          <p style="max-width:62ch;margin:-4px 0 24px;color:rgba(20,21,15,.62);line-height:1.6;text-wrap:pretty">Sí. Nos mandás el cambio por WhatsApp y lo hacemos. No hay panel de edición: los cambios los hacemos nosotros.</p>
+        </details>
+        <details data-reveal="true" style="border-top:1px solid rgba(20,21,15,.14)">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px;padding:20px 0;cursor:pointer;font-size:clamp(1.05rem,1.9cqi,1.24rem);font-weight:500;letter-spacing:-.02em">¿Necesito RUC?<span aria-hidden="true" data-toggle="true" style="flex:none;color:rgba(20,21,15,.42);font-size:1.4em;line-height:1;transition:transform .2s">+</span></summary>
+          <p style="max-width:62ch;margin:-4px 0 24px;color:rgba(20,21,15,.62);line-height:1.6;text-wrap:pretty">Para el sitio, no. Para el dominio .com.py y para emitir factura, conviene tenerlo. Si todavía no tenés, consultanos antes de empezar.</p>
+        </details>
+        <details data-reveal="true" style="border-top:1px solid rgba(20,21,15,.14)">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px;padding:20px 0;cursor:pointer;font-size:clamp(1.05rem,1.9cqi,1.24rem);font-weight:500;letter-spacing:-.02em">¿Cuánto demora?<span aria-hidden="true" data-toggle="true" style="flex:none;color:rgba(20,21,15,.42);font-size:1.4em;line-height:1;transition:transform .2s">+</span></summary>
+          <p style="max-width:62ch;margin:-4px 0 24px;color:rgba(20,21,15,.62);line-height:1.6;text-wrap:pretty">La referencia es siete días hábiles desde que tenemos tu información y tus fotos. Si la entrega de materiales se demora, el plazo se corre.</p>
+        </details>
+        <details data-reveal="true" style="border-top:1px solid rgba(20,21,15,.14);border-bottom:1px solid rgba(20,21,15,.14)">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px;padding:20px 0;cursor:pointer;font-size:clamp(1.05rem,1.9cqi,1.24rem);font-weight:500;letter-spacing:-.02em">¿Por qué el pago es anual?<span aria-hidden="true" data-toggle="true" style="flex:none;color:rgba(20,21,15,.42);font-size:1.4em;line-height:1;transition:transform .2s">+</span></summary>
+          <p style="max-width:62ch;margin:-4px 0 24px;color:rgba(20,21,15,.62);line-height:1.6;text-wrap:pretty">El dominio y el hosting se pagan por año, y el trabajo fuerte está al principio. Cobrar anual permite mantener una cuota mensual equivalente sin pedir un anticipo grande.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="empezar" style="padding:clamp(84px,13cqi,164px) clamp(16px,3cqi,34px);color:#F7F5F2;background:#14150F;text-align:center;scroll-margin-top:70px">
+      <div data-reveal="true" style="width:min(100%,900px);margin:0 auto">
+        <p style="margin:0 0 18px;color:rgba(247,245,242,.42);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase">El próximo paso es simple</p>
+        <h2 style="margin:0;font-size:clamp(2.8rem,9cqi,6.6rem);font-weight:500;letter-spacing:-.065em;line-height:.86">Empecemos hoy</h2>
+        <p style="max-width:40ch;margin:22px auto 0;color:rgba(247,245,242,.64);font-size:clamp(1rem,1.8cqi,1.18rem);line-height:1.5;text-wrap:pretty">Contanos qué hace tu negocio y te decimos qué diría tu sitio.</p>
+        <div role="note" style="display:grid;gap:8px;width:min(100%,560px);margin:34px auto 0;padding:22px;border:1px solid rgba(247,245,242,.18);border-radius:18px;background:rgba(247,245,242,.06);text-align:left">
+          <span style="color:var(--acid,#C8F04A);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase">Contacto pendiente</span>
+          <p style="margin:0;color:rgba(247,245,242,.64);line-height:1.55">Agregá el número real en <code style="color:#F7F5F2;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em">SITE_WHATSAPP</code> para activar los botones antes de publicar.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px 32px;align-items:center;padding:26px clamp(16px,4cqi,54px);color:rgba(247,245,242,.42);background:#14150F;border-top:1px solid rgba(247,245,242,.12);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.58rem;letter-spacing:.08em;line-height:1.7;text-transform:uppercase">
+    <a href="#inicio" style="color:#F7F5F2">sitiosweb.com.py</a>
+    <p style="margin:0">Servicio de sitios web para negocios locales en Paraguay.</p>
+    <p style="margin:0">Datos legales y políticas pendientes de confirmación antes de publicar.</p>
+  </footer>
+
+  <sc-if value="{{ showSticky }}" hint-placeholder-val="{{ false }}">
+    <div style="position:sticky;bottom:0;z-index:800;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(20,21,15,.94);border-top:1px solid rgba(247,245,242,.14);backdrop-filter:blur(14px)">
+      <div style="display:grid;gap:3px;color:#F7F5F2">
+        <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,245,242,.5)">Desde</span>
+        <strong style="font-size:1rem;font-weight:500;letter-spacing:-.03em">Gs. 89.000 /mes</strong>
+      </div>
+      <a href="#empezar" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 20px;border-radius:999px;background:var(--acid,#C8F04A);color:#14150F;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase">Escribir</a>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;preview&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;responsive&quot;,&quot;mobile&quot;],&quot;default&quot;:&quot;responsive&quot;,&quot;tsType&quot;:&quot;'responsive' | 'mobile'&quot;,&quot;section&quot;:&quot;Vista&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#C8F04A&quot;,&quot;#B8E23C&quot;,&quot;#E9F252&quot;,&quot;#9FE870&quot;],&quot;default&quot;:&quot;#C8F04A&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Marca&quot;},&quot;stickyCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conversión&quot;},&quot;autoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Carrusel&quot;}}">
+const CONCEPTS = [
+  { tag: 'Concepto 01 / Salud', name: 'Clínica dental', x: '0%' },
+  { tag: 'Concepto 02 / Hogar', name: 'Arquitectura', x: '20%' },
+  { tag: 'Concepto 03 / Gastronomía', name: 'Cocina paraguaya', x: '40%' },
+  { tag: 'Concepto 04 / Servicios', name: 'Estudio contable', x: '60%' },
+  { tag: 'Concepto 05 / Construcción', name: 'Obras & reformas', x: '80%' },
+  { tag: 'Concepto 06 / Belleza', name: 'Estudio de belleza', x: '100%' }
+];
+
+class Component extends DCLogic {
+  state = { w: 1200, menuOpen: false, active: 0, paused: false };
+
+  pos = 0;
+  target = 0;
+  lastAdvance = 0;
+  lastFrame = 0;
+  hovering = false;
+
+  get reduced() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  componentDidMount() {
+    if (this.reduced) this.setState({ paused: true });
+
+    if (this.root && 'ResizeObserver' in window) {
+      this.ro = new ResizeObserver((entries) => {
+        const w = Math.round(entries[0].contentRect.width);
+        if (w !== this.state.w) this.setState({ w });
+        this.layout();
+      });
+      this.ro.observe(this.root);
+    }
+    this.setState({ w: this.root ? Math.round(this.root.clientWidth) : window.innerWidth });
+
+    this.onScroll = () => this.syncHeader();
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll, { passive: true });
+    this.syncHeader();
+
+    this.onKey = (e) => {
+      if (e.key === 'Escape' && this.state.menuOpen) this.setState({ menuOpen: false });
+    };
+    document.addEventListener('keydown', this.onKey);
+
+    if (this.carousel) {
+      this.carousel.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); this.nudge(-1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); this.nudge(1); }
+      });
+      this.carousel.addEventListener('pointerenter', () => { this.hovering = true; });
+      this.carousel.addEventListener('pointerleave', () => { this.hovering = false; });
+      this.carousel.addEventListener('pointerdown', (e) => { this.dragX = e.clientX; });
+      this.carousel.addEventListener('pointerup', (e) => {
+        if (this.dragX == null) return;
+        const dx = e.clientX - this.dragX;
+        this.dragX = null;
+        if (Math.abs(dx) > 40) this.nudge(dx < 0 ? 1 : -1);
+      });
+    }
+
+    this.setupReveal();
+    this.layout();
+    this.frame = requestAnimationFrame(this.tick);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.frame);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    document.removeEventListener('keydown', this.onKey);
+    this.ro && this.ro.disconnect();
+    this.io && this.io.disconnect();
+  }
+
+  setupReveal() {
+    const items = [...document.querySelectorAll('[data-reveal]')];
+    if (this.reduced || !('IntersectionObserver' in window)) return;
+    items.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92) return;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(18px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.22,.7,.2,1), transform .7s cubic-bezier(.22,.7,.2,1)';
+    });
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'none';
+        this.io.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    items.forEach((el) => this.io.observe(el));
+  }
+
+  syncHeader() {
+    const el = this.header;
+    if (!el) return;
+    const hero = document.getElementById('inicio');
+    const solid = hero ? hero.getBoundingClientRect().bottom < 80 : window.scrollY > 100;
+    el.style.background = solid ? 'rgba(247,245,242,.92)' : 'transparent';
+    el.style.borderBottomColor = solid ? 'rgba(20,21,15,.1)' : 'transparent';
+    el.style.color = solid ? '#14150F' : '#F7F5F2';
+    el.style.backdropFilter = solid ? 'blur(16px)' : 'none';
+  }
+
+  cards() {
+    return this.stage ? [...this.stage.querySelectorAll('[data-card]')] : [];
+  }
+
+  layout() {
+    const stage = this.stage;
+    if (!stage) return;
+    const sw = stage.clientWidth;
+    const sh = stage.clientHeight;
+    if (!sw || !sh) return;
+    const narrow = sw < 700;
+    let cardH = Math.max(170, sh - 6);
+    let cardW = cardH * 9 / 16;
+    const maxW = narrow ? sw * 0.56 : Math.min(250, sw * 0.2);
+    if (cardW > maxW) { cardW = maxW; cardH = cardW * 16 / 9; }
+
+    const spacing = cardW * (narrow ? 0.68 : 0.92);
+    const depth = narrow ? 78 : 140;
+    const rot = narrow ? -11 : -16;
+    const cards = this.cards();
+    const n = cards.length || 1;
+    const half = n / 2;
+
+    cards.forEach((card, i) => {
+      let offset = i - this.pos;
+      offset = ((offset % n) + n + half) % n - half;
+      const d = Math.abs(offset);
+      card.style.width = cardW + 'px';
+      card.style.height = cardH + 'px';
+      card.style.transform = 'translateX(calc(-50% + ' + (offset * spacing).toFixed(2) + 'px)) translateZ(' + (-d * depth).toFixed(1) + 'px) rotateY(' + (offset * rot).toFixed(2) + 'deg) scale(' + Math.max(0.55, 1 - d * 0.045).toFixed(3) + ')';
+      card.style.zIndex = String(100 - Math.round(d * 10));
+      card.style.opacity = String(Math.max(0, 1 - Math.max(0, d - 1.7) * 0.85).toFixed(3));
+      card.style.pointerEvents = d > 2.4 ? 'none' : 'auto';
+      card.setAttribute('aria-hidden', d > 1.6 ? 'true' : 'false');
+      card.tabIndex = d > 1.6 ? -1 : 0;
+    });
+  }
+
+  syncActive() {
+    const n = CONCEPTS.length;
+    const active = ((Math.round(this.pos) % n) + n) % n;
+    if (active === this.state.active) return;
+    this.setState({ active });
+    this.cards().forEach((card, i) => {
+      const shot = card.querySelector('[data-shot]');
+      if (shot) shot.style.backgroundPositionY = i === active ? '68%' : '0%';
+    });
+  }
+
+  tick = (time) => {
+    this.frame = requestAnimationFrame(this.tick);
+    if (!this.lastFrame) { this.lastFrame = time; this.lastAdvance = time; return; }
+    const dt = Math.min(64, time - this.lastFrame);
+    this.lastFrame = time;
+
+    const autoplay = this.props.autoplay !== false;
+    const running = autoplay && !this.state.paused && !this.hovering && !this.reduced;
+    if (running && time - this.lastAdvance > 4200) {
+      this.lastAdvance = time;
+      this.target += 1;
+    }
+
+    const diff = this.target - this.pos;
+    if (Math.abs(diff) > 0.0005) {
+      this.pos += diff * Math.min(1, dt / 260);
+      this.layout();
+      this.syncActive();
+    }
+  };
+
+  nudge(step) {
+    this.target = Math.round(this.target) + step;
+    this.lastAdvance = performance.now();
+  }
+
+  goTo(i) {
+    const n = CONCEPTS.length;
+    const current = ((Math.round(this.target) % n) + n) % n;
+    let delta = i - current;
+    if (delta > n / 2) delta -= n;
+    if (delta < -n / 2) delta += n;
+    this.target = Math.round(this.target) + delta;
+    this.lastAdvance = performance.now();
+  }
+
+  renderVals() {
+    const w = this.state.w;
+    const mobileFrame = this.props.preview === 'mobile';
+    const isMobile = mobileFrame || w < 860;
+    const accent = this.props.accent || '#C8F04A';
+    const active = this.state.active;
+
+    return {
+      accent,
+      frameWidth: mobileFrame ? '390px' : '100%',
+      isMobile,
+      isDesktop: !isMobile,
+      menuOpen: this.state.menuOpen,
+      showSticky: this.props.stickyCta !== false && isMobile,
+      paused: this.state.paused,
+      pauseText: this.state.paused ? 'Play' : 'Pausa',
+      pauseLabel: this.state.paused ? 'Reanudar carrusel' : 'Pausar carrusel',
+      activeTag: CONCEPTS[active].tag,
+      startOpen: true,
+      activeName: CONCEPTS[active].name,
+      concepts: CONCEPTS.map((c, i) => ({
+        tag: c.tag,
+        name: c.name,
+        x: c.x,
+        aria: c.name,
+        isActive: i === active,
+        dotW: i === active ? '22px' : '10px',
+        dotBg: i === active ? accent : 'rgba(247,245,242,.34)',
+        onSelect: () => this.goTo(i)
+      })),
+      prev: () => this.nudge(-1),
+      next: () => this.nudge(1),
+      togglePause: () => this.setState((s) => ({ paused: !s.paused })),
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      rootRef: (el) => { this.root = el; },
+      headerRef: (el) => { this.header = el; },
+      heroBgRef: (el) => { this.heroBg = el; },
+      stageRef: (el) => { this.stage = el; },
+      carouselRef: (el) => { this.carousel = el; }
+    };
+  }
+}
+
+</script>
+</body>
+</html>
