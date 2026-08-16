@@ -21,6 +21,14 @@ ErrorDocument 404 /404.php
     Require all denied
 </FilesMatch>
 
+# Carpetas que no son del sitio -----------------------------------------------
+# Con deploy por Git, public_html recibe TODO el repo — incluidos .git/,
+# archive/ y design/. El ZIP de tools/ ya los excluye; esto cubre el otro camino.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(\.git|archive|design|tools|dist)(/|$) - [F,L]
+</IfModule>
+
 # URLs ------------------------------------------------------------------------
 <IfModule mod_rewrite.c>
     RewriteEngine On

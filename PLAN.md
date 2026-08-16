@@ -213,6 +213,21 @@ En el servidor, una sola vez:
 
 Verificación local sin PHP instalado: `node tools/preview-server.mjs`.
 
+### Alternativa: deploy por Git
+
+hPanel → Git, apuntando a la rama **`main`** con install path `public_html`. El
+`index.php` está en la raíz del repo, así que el clon *es* el document root, sin
+subcarpeta que configurar.
+
+Diferencia con el ZIP: el clon trae **todo** el repo, incluidos `.git/`,
+`archive/` y `design/`. Por eso el `.htaccess` bloquea esas rutas con `[F,L]`.
+El ZIP directamente no las incluye.
+
+`includes/config.local.php` no está en el repo: se crea a mano en el servidor
+una sola vez y sobrevive a los pulls (está en `.gitignore`, git no lo toca).
+
+Nunca conectar una rama `claude/*`: son ramas de trabajo, se reescriben.
+
 ---
 
 ## 6. Preguntas abiertas
